@@ -1,0 +1,13 @@
+<svg [attr.width]="svgSize().width" [attr.height]="svgSize().height" viewBox="0 0 1000 1000">
+    @for (p of provincesSvg(); track $index) {
+    <path 
+        [attr.d]="p.nodes"
+        [attr.fill]="p.fill"
+        [attr.stroke]="p.stroke"
+        [attr.opacity]="p.opacity"
+        (click)="onClick(p.province.id)"
+        (mouseenter)="p.opacity = 0.8"
+        (mouseleave)="p.opacity = 1">
+    </path>
+    }
+</svg>
